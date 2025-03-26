@@ -1,0 +1,4 @@
+- "Hey Frontdesk™, what’s the current status of our totally stable projects?"
+- "I’d like to file a formal complaint™ — can you create an issue in laggy.services?"
+- "List all issues that sound like future incidents waiting to happen."
+- "Show me the latest unresolved chaos — open issues across silly.enterprises."

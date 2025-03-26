@@ -1,0 +1,292 @@
+openapi: 3.1.0
+info:
+  title: GitHub API (Filtered)
+  version: 1.0.0
+  description: use our org name 'silly.enterprises' for org or owner
+servers:
+  - url: https://api.github.com
+    description: GitHub REST API
+paths:
+  /repos/silly-enterprises/{repo}:
+    get:
+      operationId: getRepository
+      summary: Get a repository
+      tags:
+        - repos
+      responses:
+        "200":
+          description: Repository info
+  /repos/silly-enterprises/{repo}/issues:
+    get:
+      operationId: listRepoIssues
+      summary: List issues in a repository
+      tags:
+        - issues
+      responses:
+        "200":
+          description: List of issues
+  /repos/silly-enterprises/{repo}/issues/{issue_number}:
+    get:
+      operationId: getRepoIssue
+      summary: Get a single issue from a repository
+      tags:
+        - issues
+      responses:
+        "200":
+          description: Issue details
+  /orgs/silly-enterprises/issues:
+    get:
+      operationId: listOrgIssues
+      summary: List organization issues assigned to the authenticated user
+      tags:
+        - issues
+      responses:
+        "200":
+          description: Org-level issues list
+  /orgs/silly-enterprises/memberships/{username}:
+    get:
+      operationId: getOrgMembership
+      summary: Get membership details for a user in an organization
+      tags:
+        - orgs
+      responses:
+        "200":
+          description: Membership info
+  /orgs/silly-enterprises/members:
+    get:
+      operationId: listOrgMembers
+      summary: List members of an organization
+      tags:
+        - orgs
+      responses:
+        "200":
+          description: List of members
+  /user:
+    get:
+      operationId: getAuthenticatedUser
+      summary: Get the authenticated user's details
+      tags:
+        - users
+      responses:
+        "200":
+          description: Authenticated user info
+  /users/{username}:
+    get:
+      operationId: getUserByUsername
+      summary: Get a user's public profile
+      tags:
+        - users
+      responses:
+        "200":
+          description: User public profile
+  /repos/silly-enterprises/{repo}/discussions:
+    get:
+      operationId: listRepoDiscussions
+      summary: List discussions in a repository
+      tags:
+        - discussions
+      responses:
+        "200":
+          description: List of discussions
+  /projects/{project_id}:
+    get:
+      operationId: getProject
+      summary: Get a GitHub project (Classic)
+      tags:
+        - projects
+      responses:
+        "200":
+          description: Project details
+  /repos/silly-enterprises/{repo}/projects:
+    get:
+      operationId: listRepoProjects
+      summary: List projects for a repository (Classic)
+      tags:
+        - projects
+      responses:
+        "200":
+          description: List of projects
+  /orgs/silly-enterprises/projects:
+    get:
+      operationId: listOrgProjects
+      summary: List organization projects (Classic)
+      tags:
+        - projects
+      responses:
+        "200":
+          description: Org-level projects list
+  /orgs/silly-enterprises/repos:
+    get:
+      operationId: listOrgRepos
+      summary: List organization Repositories (Classic)
+      tags:
+        - repos
+      responses:
+        "200":
+          description: Org-level repository list
+  /repos/silly-enterprises/{repo}/issues:
+    post:
+      operationId: createIssue
+      summary: Create a new issue
+      tags: [ issues ]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                body:
+                  type: string
+                labels:
+                  type: array
+                  items:
+                    type: string
+                assignees:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '201':
+          description: Issue created
+
+  /repos/silly-enterprises/{repo}/issues/{issue_number}:
+    patch:
+      operationId: updateIssue
+      summary: Update an issue (e.g., title, body, labels, state)
+      tags: [ issues ]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                body:
+                  type: string
+                state:
+                  type: string
+                  enum: [ open, closed ]
+                labels:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Issue updated
+
+  /repos/silly-enterprises/{repo}/issues/{issue_number}/labels:
+    get:
+      operationId: listLabelsOnIssue
+      summary: List labels on an issue
+      tags: [ issues ]
+      responses:
+        '200':
+          description: Labels retrieved
+    post:
+      operationId: addLabelsToIssue
+      summary: Add labels to an issue
+      tags: [ issues ]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - type: object
+                  properties:
+                    labels:
+                      type: array
+                      items:
+                        type: string
+      responses:
+        '200':
+          description: Labels added
+
+  /repos/silly-enterprises/{repo}/issues/{issue_number}/labels/{name}:
+    delete:
+      operationId: removeLabelFromIssue
+      summary: Remove a single label from an issue
+      tags: [ issues ]
+      responses:
+        '200':
+          description: Label removed
+
+  /repos/silly-enterprises/{repo}/issues/{issue_number}/labels:
+    delete:
+      operationId: removeAllLabelsFromIssue
+      summary: Remove all labels from an issue
+      tags: [ issues ]
+      responses:
+        '204':
+          description: All labels removed
+
+  /repos/silly-enterprises/{repo}/labels:
+    get:
+      operationId: listLabelsForRepo
+      summary: List labels in a repository
+      tags: [ issues ]
+      responses:
+        '200':
+          description: Labels listed
+    post:
+      operationId: createLabel
+      summary: Create a new label
+      tags: [ issues ]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [ name, color ]
+              properties:
+                name:
+                  type: string
+                color:
+                  type: string
+                description:
+                  type: string
+      responses:
+        '201':
+          description: Label created
+
+  /repos/silly-enterprises/{repo}/labels/{name}:
+    get:
+      operationId: getLabel
+      summary: Get a single label by name
+      tags: [ issues ]
+      responses:
+        '200':
+          description: Label retrieved
+    patch:
+      operationId: updateLabel
+      summary: Update an existing label
+      tags: [ issues ]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                new_name:
+                  type: string
+                color:
+                  type: string
+                description:
+                  type: string
+      responses:
+        '200':
+          description: Label updated
+    delete:
+      operationId: deleteLabel
+      summary: Delete a label
+      tags: [ issues ]
+      responses:
+        '204':
+          description: Label deleted

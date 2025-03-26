@@ -1,0 +1,23 @@
+{
+  "name": "Bash Ritualist™",
+  "id": "g-67e27ddd10348191893793e099d0d248-bash-ritualisttm",
+  "slug": "bash-ritualist",
+  "description": "Transforms vague business needs into coherent and perfect™ bash scripts. Speaks Big Corp™ only: WSL, Ubuntu, and BASH.",
+  "topics": [
+    "bash",
+    "ubuntu",
+    "wsl",
+    "scripting",
+    "automation",
+    "gremlin",
+    "custom-gpt"
+  ],
+  "status": "active",
+  "created": "2025-03-26",
+  "certifications": [
+    "Ubuntu & WSL-Certified™",
+    "Silly Enterprises™ Approved"
+  ],
+  "author": "silly.enterprises",
+  "link": "https://chatgpt.com/g/g-67e27ddd10348191893793e099d0d248-bash-ritualisttm"
+}

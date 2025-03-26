@@ -1,0 +1,23 @@
+{
+  "name": "Silly Enterprises Frontdesk™",
+  "id": "g-67e2ca19d4a48191be0b1df820c434bd-silly-enterprises-frontdesktm",
+  "slug": "frontdesk",
+  "description": "Proudly powered by coffee, sarcasm, and limited API access.",
+  "topics": [
+    "github",
+    "concierge",
+    "issue-tracking",
+    "org assistant",
+    "gremlin",
+    "custom-gpt",
+    "openapi"
+  ],
+  "status": "internal",
+  "created": "2025-03-26",
+  "certifications": [
+    "Silly Enterprises™ Approved",
+    "GitHub API-Aware™"
+  ],
+  "author": "silly.enterprises",
+  "link": "https://chatgpt.com/g/g-67e2ca19d4a48191be0b1df820c434bd-silly-enterprises-frontdesktm"
+}

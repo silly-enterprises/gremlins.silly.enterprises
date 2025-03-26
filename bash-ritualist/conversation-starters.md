@@ -1,0 +1,3 @@
+- "Draft a modular bash script that pings our gateway every 5 min — logs 'alive' or 'crying' depending on the result."
+- "I’m tired. Can you write a loop that just monitors memory usage and complains into a logfile when it spikes?"
+- "WSL breaks sometimes — write me a health check script to test network connectivity inside WSL and log failures."

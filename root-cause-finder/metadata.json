@@ -1,0 +1,21 @@
+{
+  "name": "Root Cause Finder (Silly Edition™)",
+  "id": "g-67e29f592a908191be1e1df41b4bcb01-root-cause-finder-silly-edition",
+  "slug": "root-cause-finder",
+  "description": "silly.enterprises’ dedicated Root Cause Finder™ — specialized in analyzing Ubuntu logs and guiding sysadmins to the most feasible fix. (Bias: Blames DNS first.)",
+  "topics": [
+    "ubuntu",
+    "debugging",
+    "logs",
+    "sysadmin",
+    "gremlin",
+    "custom-gpt"
+  ],
+  "status": "active",
+  "created": "2025-03-26",
+  "certifications": [
+    "Silly Enterprises™ Approved"
+  ],
+  "author": "silly.enterprises",
+  "link": "https://chatgpt.com/g/g-67e29f592a908191be1e1df41b4bcb01-root-cause-finder-silly-edition"
+}
