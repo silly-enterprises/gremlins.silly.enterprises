@@ -63,7 +63,6 @@ This gremlin uses a **filtered GitHub OpenAPI schema** to:
 📦 Public launch coming soon — internal use only for now!
 
 <p align="center">
-    <a href="https://chatgpt.com/g/g-67e29f592a908191be1e1df41b4bcb01-root-cause-finder-silly-edition" target="_blank">
     <img src="https://img.shields.io/badge/🛎️%20Launch%20Gremlin-Frontdesk™%20(Not%20Public)-lightgrey?style=for-the-badge" />
     </a>
 </p>
